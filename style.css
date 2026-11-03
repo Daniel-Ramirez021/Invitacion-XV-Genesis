@@ -1,0 +1,144 @@
+*{box-sizing:border-box}
+:root{--lav:#a88ac7;--violet:#76559b;--deep:#52366f;--gold:#c9a85e;--paper:#fffdfd}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 15%,#fff 0,#f3edf9 55%,#ded0eb 100%);font-family:Montserrat,sans-serif;color:#594b67;overflow-x:hidden}
+.glitter{position:fixed;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(#d5bd83 1px,transparent 1.6px),radial-gradient(#fff 1px,transparent 1.5px);background-size:53px 53px,89px 89px;background-position:0 0,25px 31px}
+main{position:relative;z-index:1;min-height:100vh;display:grid;place-items:center;padding:28px 14px}
+.cover{width:min(100%,650px);min-height:720px;display:grid;place-items:center}
+.envelope-shell{width:min(100%,570px);min-height:640px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,#fffdfb,#f3eaf8);border:1px solid #c6a96f;outline:1px solid #c6a96f88;outline-offset:7px;box-shadow:0 28px 80px #70548125;overflow:hidden}
+.envelope-shell:before,.envelope-shell:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #c6a96f55;border-radius:50%}
+.envelope-shell:before{left:-170px;top:-150px}.envelope-shell:after{right:-170px;bottom:-150px}
+.envelope-topline{font-size:9px;letter-spacing:4px;color:#a28aab;margin-bottom:42px}
+.envelope{width:min(370px,78vw);height:245px;position:relative;perspective:1000px;cursor:pointer;filter:drop-shadow(0 20px 16px #5b426b30)}
+.env-paper{position:absolute;inset:-12px;background:#fff;border:1px solid #d6c8dc}
+.env-back{position:absolute;inset:0;background:linear-gradient(135deg,#d9c9e7,#b99fce);border:1px solid #b49ac7}
+.env-letter{position:absolute;left:8%;right:8%;top:8px;height:215px;background:#fffdfd;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform 1.15s ease;color:#9278a6}
+.letter-small{font:italic 16px 'Cormorant Garamond'}.env-letter strong{font:38px 'Great Vibes';font-weight:400;color:#785b94}.letter-name{font:17px 'Cormorant Garamond';letter-spacing:2px}.env-letter i{font-style:normal;color:var(--gold);margin-top:10px}
+.env-flap{position:absolute;inset:0;background:linear-gradient(145deg,#e5d8ef,#b99fce);clip-path:polygon(0 0,100% 0,50% 59%);transform-origin:top;transition:transform 1s ease;z-index:5;backface-visibility:visible}
+.env-front-left,.env-front-right,.env-front-bottom{position:absolute;inset:0;z-index:3}.env-front-left{background:#d4c1e1;clip-path:polygon(0 0,51% 55%,0 100%)}.env-front-right{background:#c5afd6;clip-path:polygon(100% 0,49% 55%,100% 100%)}.env-front-bottom{background:#e4d8ec;clip-path:polygon(0 100%,50% 42%,100% 100%)}
+.wax-seal{position:absolute;z-index:7;top:53%;left:50%;transform:translate(-50%,-50%);width:57px;height:57px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#e8d7a7,#a78343);border:2px solid #f0e3c2;box-shadow:0 3px 7px #57402f55;color:#fff8e8;font:35px 'Great Vibes';transition:opacity .4s}
+.envelope.open .env-flap{transform:rotateX(180deg);z-index:0}.envelope.open .env-letter{transform:translateY(-145px);z-index:6}.envelope.open .wax-seal{opacity:0}
+.envelope-caption{font:29px 'Great Vibes';color:#876ba0;margin-top:35px}.open-instruction{font-size:8px;letter-spacing:2px;color:#9d8ba5;margin-top:24px}.open-instruction span{color:var(--gold);padding:0 8px}
+.butterfly{position:absolute;font-size:34px;animation:float 4s ease-in-out infinite}.butterfly-one{left:8%;top:22%}.butterfly-two{right:8%;bottom:20%;animation-delay:1.3s}
+.hidden{display:none!important}
+.card{width:min(100%,550px);margin:auto;animation:appear 1.2s ease}
+.card-frame{position:relative;overflow:hidden;min-height:1000px;padding:43px 25px 35px;background:linear-gradient(160deg,#fff 0%,#fbf9ff 48%,#f7f0fc 100%);border:1px solid #d3c1e1;border-radius:9px;box-shadow:0 25px 75px #624b7628}
+.card-frame:before{content:"";position:absolute;inset:9px;border:1px solid #c5a66a;border-radius:5px;pointer-events:none;z-index:3}.card-frame:after{content:"";position:absolute;inset:14px;border:1px solid #e7d9ee;border-radius:4px;pointer-events:none;z-index:3}
+.wash{position:absolute;left:-8%;width:116%;height:210px;pointer-events:none;opacity:.85;background:radial-gradient(ellipse at 20% 20%,#b6a0d7 0 12%,transparent 38%),radial-gradient(ellipse at 50% 0%,#d5c6eb 0 20%,transparent 55%),radial-gradient(ellipse at 85% 15%,#a78bc9 0 12%,transparent 40%);filter:blur(10px)}
+.wash-top{top:-115px}.wash-bottom{bottom:-120px;transform:rotate(180deg)}
+.card-content{position:relative;z-index:2;text-align:center}.top-label{font-size:8px;letter-spacing:3px;color:#927ba8;margin:0 0 12px}
+.tiara{font-size:33px;color:#9e82bc;margin:0 0 2px}.mis{font:20px 'Cormorant Garamond';letter-spacing:4px;color:#755692;margin:0}.mis span{font-size:58px;letter-spacing:0;vertical-align:middle;margin:0 6px;color:#69468d}
+h1{font:clamp(62px,14vw,92px) 'Great Vibes';font-weight:400;color:#a58acb;margin:-4px 0 0;line-height:1.15}.full-name{font:9px Montserrat;letter-spacing:3px;color:#927ba8;margin:0 0 14px}
+.photo-frame{width:158px;height:158px;border-radius:50%;margin:0 auto 15px;padding:5px;border:1px solid #b99b62;background:#fff;box-shadow:0 4px 18px #7b61902b}
+.photo-placeholder{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#fff 0,#f0e8f7 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#9278a7;border:1px dashed #c4add6}
+.camera{font-size:28px}.photo-placeholder small{font-size:8px;letter-spacing:1.5px;margin-top:6px}.photo-placeholder em{font:italic 11px 'Cormorant Garamond';margin-top:4px}.genesis-photo{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.invite-text{font:italic 17px/1.4 'Cormorant Garamond';color:#76677f;margin:10px 0 13px}
+.date-line{display:flex;align-items:center;justify-content:center;gap:10px;color:#9b81b0;font-size:9px;letter-spacing:3px}.date-line span{width:48px;height:1px;background:#c8b2d8}
+.date-info{display:flex;align-items:center;justify-content:center;gap:12px;color:#72568f;margin:0}.date-info strong{font:70px/.9 'Cormorant Garamond';font-weight:300}.date-info div{text-align:left;font:12px/1.5 Montserrat;letter-spacing:2px}.date-info b{font-weight:500;color:#b09461}
+.time{font:20px 'Cormorant Garamond';color:#765b8d;margin:6px 0 0}.provisional{font-size:7px;letter-spacing:1.8px;color:#a897b1;margin:2px 0 13px}
+.location{margin:12px auto 0}.location-flourish{color:#bd9c60;font-size:18px}.place-label{font-size:8px;letter-spacing:2px;color:#927ba8;margin:2px 0 5px}.location h2{font:23px 'Cormorant Garamond';font-weight:500;color:#665171;margin:0}.location p:last-child{font:italic 15px 'Cormorant Garamond';color:#84768e;margin:2px 0}
+.thank-you{font:italic 15px 'Cormorant Garamond';color:#75647f;margin:15px 0 2px}.card-content h3{font:italic 15px 'Cormorant Garamond';font-weight:400;color:#9174a7;margin:0}.signature{font:38px 'Great Vibes';color:#9c80b8;margin:0}
+.music-button{position:relative;z-index:4;border:1px solid #c2a56b;border-radius:25px;background:#fffdfd;color:#806393;padding:9px 18px;font:9px Montserrat;letter-spacing:1px;margin-top:12px;cursor:pointer}.music-button span:first-child{font-size:15px;margin-right:7px}.music-note{font-size:8px;color:#a091a9;margin:5px 0 0}
+.floral{position:absolute;z-index:1;top:4px;bottom:4px;width:65px;display:flex;flex-direction:column;justify-content:space-around;align-items:center;color:#9174b2;opacity:.7;pointer-events:none}.floral-left{left:0}.floral-right{right:0;transform:scaleX(-1)}.floral span:nth-child(odd){font-size:38px;color:#9c80bd}.floral span:nth-child(even){font-size:28px;color:#b4a0ce}
+.butterfly-card{position:absolute;z-index:1;font-size:28px;opacity:.75;top:140px}.b-left{left:12px;transform:rotate(-20deg)}.b-right{right:12px;top:250px;transform:rotate(20deg)}
+.falling span{position:fixed;z-index:0;top:-30px;animation:fall 17s linear infinite;opacity:.5}.falling span:nth-child(1){left:10%}.falling span:nth-child(2){left:32%;animation-delay:5s}.falling span:nth-child(3){left:65%;animation-delay:2s}.falling span:nth-child(4){left:86%;animation-delay:8s}.falling span:nth-child(5){left:48%;animation-delay:11s}
+@keyframes float{50%{transform:translateY(-14px) rotate(9deg)}}@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@keyframes fall{to{transform:translateY(110vh) rotate(300deg)}}
+@media(max-width:480px){.cover{min-height:650px}.envelope-shell{min-height:610px}.card-frame{min-height:960px;padding:38px 19px 30px}.floral{width:43px}.floral span:nth-child(odd){font-size:28px}.floral span:nth-child(even){font-size:22px}.photo-frame{width:145px;height:145px}.invite-text{font-size:16px}}
+
+/* Mariposas moradas animadas alrededor de la invitación */
+.falling{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+.falling .fly{position:absolute;top:var(--top);left:var(--left);font-size:var(--size);opacity:0;
+ color:#8050b5;filter:sepia(1) saturate(3.8) hue-rotate(225deg) drop-shadow(0 2px 5px #8d5fc966);
+ animation:purpleButterflyFlight var(--duration) ease-in-out infinite;
+ animation-delay:var(--delay);transform-origin:center}
+.fly-1{--top:8%;--left:4%;--size:27px;--duration:11s;--delay:-2s}
+.fly-2{--top:18%;--left:88%;--size:33px;--duration:13s;--delay:-7s}
+.fly-3{--top:42%;--left:2%;--size:24px;--duration:12s;--delay:-4s}
+.fly-4{--top:55%;--left:92%;--size:30px;--duration:14s;--delay:-9s}
+.fly-5{--top:76%;--left:7%;--size:31px;--duration:15s;--delay:-6s}
+.fly-6{--top:82%;--left:86%;--size:25px;--duration:12s;--delay:-1s}
+.fly-7{--top:30%;--left:95%;--size:21px;--duration:10s;--delay:-5s}
+.fly-8{--top:66%;--left:1%;--size:22px;--duration:16s;--delay:-11s}
+@keyframes purpleButterflyFlight{
+  0%{opacity:0;transform:translate(0,12px) rotate(-18deg) scale(.72)}
+  12%{opacity:.9}
+  28%{transform:translate(20px,-24px) rotate(16deg) scale(1)}
+  52%{transform:translate(-10px,-55px) rotate(-12deg) scale(.9)}
+  76%{transform:translate(24px,-25px) rotate(20deg) scale(1.05)}
+  90%{opacity:.9}
+  100%{opacity:0;transform:translate(-8px,20px) rotate(-16deg) scale(.75)}
+}
+@media(prefers-reduced-motion:reduce){.falling .fly{animation:none;opacity:.65}}
+
+/* Rediseño floral inspirado directamente en la tarjeta de referencia */
+.card{width:min(100%,560px)}
+.card-frame{min-height:1080px;padding:42px 26px 32px;border-radius:10px;background:
+ radial-gradient(ellipse at 50% 48%,#fff 0 42%,#fcfaff 72%,#f3eafa 100%);border:1px solid #cbb6df}
+.card-frame:before{inset:7px;border:1px solid #c9a95f;border-radius:7px}
+.card-frame:after{inset:12px;border:1px solid #e2d4ed;border-radius:5px}
+.watercolor-top,.watercolor-bottom{position:absolute;left:0;width:100%;height:190px;z-index:0;pointer-events:none;
+ background:
+ radial-gradient(ellipse at 5% 10%,#a78acb 0 13%,transparent 39%),
+ radial-gradient(ellipse at 25% -8%,#c5b2df 0 24%,transparent 53%),
+ radial-gradient(ellipse at 57% -15%,#9b7dbd 0 20%,transparent 49%),
+ radial-gradient(ellipse at 91% 0%,#b29bd1 0 22%,transparent 52%),
+ radial-gradient(ellipse at 75% 28%,#e0d4ef 0 12%,transparent 34%)}
+.watercolor-top{top:0}.watercolor-bottom{bottom:0;transform:rotate(180deg)}
+.side-blooms{position:absolute;top:130px;bottom:120px;width:60px;z-index:1;display:flex;flex-direction:column;justify-content:space-around;align-items:center;pointer-events:none}
+.left-blooms{left:-7px}.right-blooms{right:-7px;transform:scaleX(-1)}
+.side-blooms i{font-style:normal;text-shadow:0 2px 3px #70528c33}
+.side-blooms i:nth-child(1){font-size:43px;color:#7952a7}.side-blooms i:nth-child(2){font-size:34px;color:#b49bcf}
+.side-blooms i:nth-child(3){font-size:48px;color:#9270bb}.side-blooms i:nth-child(4){font-size:37px;color:#a48bc8}
+.card-content{z-index:2;padding:8px 28px}
+.top-label{letter-spacing:3.5px;color:#8365a0}
+.tiara{color:#9876ba;text-shadow:0 1px 0 #e9d8a9}
+.mis{font:21px 'Cormorant Garamond';color:#69418f;letter-spacing:3px}
+.mis span{font:clamp(65px,14vw,88px) 'Cormorant Garamond';font-weight:300;color:#68408f;text-shadow:1px 1px #e2d0f1}
+h1{font-size:clamp(66px,14vw,94px);color:#a48acb;text-shadow:0 1px 0 #fff}
+.full-name{color:#886ca5;letter-spacing:3px}
+.photo-frame{width:172px;height:172px;border:2px solid #b99558;box-shadow:0 0 0 4px #fff,0 0 0 5px #d7c3e8,0 8px 20px #765b8b30;margin:4px auto 18px}
+.photo-placeholder{background:radial-gradient(circle,#fff 0,#f0e8fa 100%);border:1px dashed #b79bd0}
+.date-info{gap:14px;margin-top:6px}.date-info strong{font-size:76px;color:#76509c}
+.weekday-inline{font:9px Montserrat;letter-spacing:2px;color:#9b825f;border-left:1px solid #d7c49a;padding-left:12px}
+.time{font-size:22px;color:#76509c}.location h2{font-size:25px;color:#68458a}
+.location p:last-child{font-size:16px}.thank-you{margin-top:18px}.signature{font-size:42px;color:#8c6ab0}
+.card-butterflies{position:absolute;inset:0;z-index:2;pointer-events:none}
+.pretty-butterfly{position:absolute;width:54px;filter:drop-shadow(0 2px 3px #68428c44)}
+.pretty-butterfly path:first-child,.flight-butterfly path:first-child{fill:#9c75cb;stroke:#70459e;stroke-width:2}
+.pretty-butterfly path:nth-child(2),.flight-butterfly path:nth-child(2){fill:#c5a9e7;stroke:#70459e;stroke-width:2}
+.pretty-butterfly .body,.flight-butterfly .body{fill:none;stroke:#583477;stroke-width:3;stroke-linecap:round}
+.pretty-butterfly .wings,.flight-butterfly .wings{transform-origin:50% 48%;animation:wingBeat .55s ease-in-out infinite alternate}
+.cb1{top:10%;left:7%;transform:rotate(-18deg)}.cb2{top:23%;right:7%;transform:rotate(18deg) scale(.8)}
+.falling{position:fixed;inset:0;z-index:8;pointer-events:none;overflow:hidden}
+.flight-butterfly{position:absolute;width:clamp(28px,4vw,48px);opacity:0;filter:drop-shadow(0 3px 5px #75439c77);animation:flyAround var(--dur) ease-in-out infinite;animation-delay:var(--delay)}
+.fb1{--dur:13s;--delay:-2s;top:8%;left:3%}.fb2{--dur:16s;--delay:-8s;top:27%;left:91%}
+.fb3{--dur:14s;--delay:-5s;top:52%;left:1%}.fb4{--dur:17s;--delay:-11s;top:70%;left:94%}
+.fb5{--dur:15s;--delay:-4s;top:86%;left:12%}.fb6{--dur:12s;--delay:-7s;top:14%;left:78%}
+.fb7{--dur:18s;--delay:-13s;top:60%;left:82%}.fb8{--dur:14s;--delay:-9s;top:40%;left:8%}
+@keyframes wingBeat{from{transform:scaleX(1)}to{transform:scaleX(.35)}}
+@keyframes flyAround{0%{opacity:0;transform:translate(0,20px) rotate(-18deg) scale(.65)}10%{opacity:.95}25%{transform:translate(24px,-35px) rotate(16deg) scale(1)}48%{transform:translate(-14px,-75px) rotate(-12deg) scale(.88)}72%{transform:translate(30px,-30px) rotate(20deg) scale(1.05)}90%{opacity:.95}100%{opacity:0;transform:translate(-12px,28px) rotate(-15deg) scale(.7)}}
+@media(max-width:480px){.card-frame{min-height:1000px;padding:36px 14px 28px}.card-content{padding:8px 20px}.side-blooms{width:43px}.side-blooms i:nth-child(1){font-size:33px}.side-blooms i:nth-child(2){font-size:26px}.side-blooms i:nth-child(3){font-size:37px}.side-blooms i:nth-child(4){font-size:29px}.photo-frame{width:150px;height:150px}}
+@media(prefers-reduced-motion:reduce){.flight-butterfly,.pretty-butterfly .wings{animation:none;opacity:.8}}
+
+/* Botanical watercolor edge treatment: keeps the center clear like the reference */
+.card{width:min(100%,560px)}
+.card-frame{min-height:1080px;padding:38px 22px 30px;background:linear-gradient(180deg,#fff 0%,#fffefe 50%,#fcf9ff 100%);border-radius:8px}
+.card-content{padding-left:34px;padding-right:34px}
+.botanical-art{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.96}
+.botanical-art svg{width:100%;height:100%;display:block}
+.watercolor-top,.watercolor-bottom{height:155px;opacity:.58;filter:blur(14px)}
+.side-blooms{display:none!important}
+.card-butterflies{z-index:2}
+.pretty-butterfly{width:48px}
+.cb1{top:11%;left:12%}.cb2{top:21%;right:12%}
+.top-label{margin-top:8px}
+@media(max-width:480px){.card-frame{min-height:1000px;padding:32px 12px 25px}.card-content{padding-left:26px;padding-right:26px}.botanical-art{opacity:.86}}
+
+/* Marco floral ilustrado con acabado plateado */
+.card-frame{position:relative;isolation:isolate;background:#fff;overflow:hidden}
+.card-frame:before,.card-frame:after{display:none}
+.frame-art{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:0;pointer-events:none}
+.card-content{position:relative;z-index:4}
+.botanical-art,.watercolor-top,.watercolor-bottom{display:none!important}
+.card-butterflies{z-index:5}
+.falling{z-index:9}
+@media(max-width:480px){.frame-art{object-fit:fill}}

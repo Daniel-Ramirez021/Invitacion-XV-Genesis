@@ -1,0 +1,18 @@
+INVITACIÓN DIGITAL - XV AÑOS DE GÉNESIS
+
+Abre index.html en tu navegador.
+
+FOTOGRAFÍA:
+La tarjeta ya tiene un espacio circular reservado para la foto de Génesis. Cuando la tengas, podremos colocarla y ajustar el recorte para que se vea perfecta.
+
+MÚSICA:
+1. Consigue una copia MP3 de "No crezcas más".
+2. Colócala en assets/musica/
+3. Nómbrala exactamente: no-crezcas-mas.mp3
+
+CAMBIOS:
+- La hora provisional aparece como "10:00 A. M." en index.html.
+- Fecha, nombre y lugar también se pueden editar directamente en index.html.
+
+La canción no está incluida en el proyecto; agrega tu propio archivo MP3.
+Las fuentes decorativas se cargan desde Google Fonts cuando hay conexión.
